@@ -32,6 +32,7 @@
     },
     "tooltip": [
       {"field": "properties.name", "title": "State"},
+      {"field": "forest_norm", "title": "Forest Cover (%)"},
       {"field": "forest_area", "title": "Forest Area (km²)"}
     ]
   }
