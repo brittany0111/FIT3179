@@ -1,0 +1,20 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": { "text": "Forest Reserves in Malaysia" },
+  "data": {
+    "url": "https://raw.githubusercontent.com/brittany0111/FIT3179/main/W10/forest_reserve_state%20copy.csv"
+  },
+  "width": 600,
+  "height": 400,
+  "mark": "bar",
+  "encoding": {
+    "x": { "field": "area", "type": "quantitative", "title": "Reserve Area (hectares)" },
+    "y": { 
+      "field": "state", 
+      "type": "nominal", 
+      "sort": "-x",
+      "title": "State"
+    },
+    "color": { "field": "state", "type": "nominal", "legend": null }
+  }
+}
