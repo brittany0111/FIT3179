@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": { "text": "Forest Reserves in Malaysia (2003–2021)" },
   "data": {
-    "url": "https://raw.githubusercontent.com/brittany0111/FIT3179/main/W10/forest_reserve_filtered.csv"
+    "url": "forest_reserve_filtered.csv"
   },
   "width": 600,
   "mark": { "type": "line", "point": true },
