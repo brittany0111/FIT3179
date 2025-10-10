@@ -5,6 +5,13 @@
     "url": "https://raw.githubusercontent.com/brittany0111/FIT3179/main/forest_reserve_filtered.csv"
   },
   "width": 600,
+  "selection": {
+    "state_highlight": {
+      "type": "multi",
+      "fields": ["state"],
+      "bind": "legend"
+    }
+  },
   "mark": { "type": "line", "point": true },
   "encoding": {
     "x": {
@@ -22,7 +29,10 @@
       "type": "nominal",
       "legend": { "title": "State" }
     },
-    "detail": {"field": "state"},
+    "opacity": {
+      "condition": { "selection": "state_highlight", "value": 1 },
+      "value": 0.2
+    },
     "tooltip": [
       { "field": "state", "type": "nominal", "title": "State" },
       {
