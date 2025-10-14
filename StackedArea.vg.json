@@ -1,0 +1,37 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Forest Loss by Driver Type Over Time",
+  "width": 700,
+  "height": 400,
+  "data": {
+    "url": "tree_cover_loss_by_driver.csv"
+  },
+  "mark": {
+    "type": "area",
+    "interpolate": "monotone"
+  },
+  "encoding": {
+    "x": {
+      "field": "loss_year",
+      "type": "ordinal",
+      "title": "Year"
+    },
+    "y": {
+      "aggregate": "sum",
+      "field": "loss_area_ha",
+      "title": "Forest Loss (ha)",
+      "stack": "normalize"   // use "zero" for absolute values, "normalize" for percentages
+    },
+    "color": {
+      "field": "drivers_type",
+      "type": "nominal",
+      "title": "Driver Type",
+      "legend": {"orient": "right"}
+    },
+    "tooltip": [
+      {"field": "drivers_type", "title": "Driver"},
+      {"field": "loss_year", "title": "Year"},
+      {"aggregate": "sum", "field": "loss_area_ha", "title": "Loss (ha)", "format": ",.0f"}
+    ]
+  }
+}
