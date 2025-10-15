@@ -3,21 +3,8 @@
   "width": 800,
   "height": 300,
   "projection": {"type": "mercator"},
-  "params": [
-    {
-      "name": "year_selected",
-      "value": 2021,
-      "bind": {
-        "input": "range",
-        "min": 2003,
-        "max": 2021,
-        "step": 1,
-        "name": "Select Year: "
-      }
-    }
-  ],
   "layer": [
-        {
+    {
       "data": {
         "graticule": {
           "step": [2, 2],
@@ -31,22 +18,20 @@
         "url": "https://raw.githubusercontent.com/brittany0111/FIT3179/main/malaysia_states.json",
         "format": {
           "type": "topojson",
-          "feature": "ne_10m_admin_1_states_provinces"   
+          "feature": "ne_10m_admin_1_states_provinces"
         }
       },
       "transform": [
         {
-          "lookup": "properties.name",   
+          "lookup": "properties.name",
           "from": {
             "data": {
-              "url": "forest_reserve_state_normalized.csv"
+              "url": "https://raw.githubusercontent.com/brittany0111/FIT3179/main/forest_reserve_state_normalized_clean.csv"
             },
             "key": "state",
             "fields": ["forest_area", "total_area", "forest_norm", "date"]
           }
-        },
-        { "calculate": "year(datum.date)", "as": "year" },
-        { "filter": "datum.year == year_selected" } 
+        }
       ],
       "mark": {"type": "geoshape"},
       "encoding": {
@@ -58,9 +43,9 @@
         },
         "tooltip": [
           {"field": "properties.name", "title": "State"},
-          {"field": "forest_norm", "title": "Forest Cover (%)"},
-          {"field": "forest_area", "title": "Forest Area (km²)"},
-          {"field": "date", "title": "Date"}
+          {"field": "forest_norm", "title": "Forest Cover (%)", "format": ".2f"},
+          {"field": "forest_area", "title": "Forest Area (ha)", "format": ",.0f"},
+          {"field": "date", "title": "Year"}
         ]
       }
     }
