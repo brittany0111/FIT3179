@@ -1,37 +1,93 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Forest Loss by Driver Type Over Time",
-  "width": 700,
-  "height": 400,
-  "data": {
-    "url": "tree_cover_loss_by_driver.csv"
-  },
-  "mark": {
-    "type": "area",
-    "interpolate": "monotone"
-  },
-  "encoding": {
-    "x": {
-      "field": "loss_year",
-      "type": "ordinal",
-      "title": "Year"
+  "title": "Tree Cover Loss by Driver Type Over Time",
+  "vconcat": [
+    {
+      "width": 700,
+      "height": 400,
+      "data": {
+        "url": "https://raw.githubusercontent.com/brittany0111/FIT3179/main/tree_cover_loss_by_driver.csv"
+      },
+      "transform": [
+        {"filter": {"param": "year_brush"}}
+      ],
+      "mark": {"type": "area", "interpolate": "monotone"},
+      "params": [
+        {
+          "name": "driver_select",
+          "select": {"type": "point", "fields": ["drivers_type"]},
+          "bind": "legend"
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "loss_year",
+          "type": "ordinal",
+          "title": "Year"
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "loss_area_ha",
+          "title": "Tree Cover Loss (ha)",
+          "stack": "zero"
+        },
+        "color": {
+          "field": "drivers_type",
+          "type": "nominal",
+          "title": "Driver Type",
+          "legend": {"orient": "right"}
+        },
+        "opacity": {
+          "condition": {"param": "driver_select", "value": 1},
+          "value": 0.2
+        },
+        "tooltip": [
+          {"field": "drivers_type", "title": "Driver"},
+          {"field": "loss_year", "title": "Year"},
+          {
+            "aggregate": "sum",
+            "field": "loss_area_ha",
+            "title": "Tree Cover Loss (ha)",
+            "format": ",.0f"
+          }
+        ]
+      }
     },
-    "y": {
-      "aggregate": "sum",
-      "field": "loss_area_ha",
-      "title": "Forest Loss (ha)",
-      "stack": "normalize"   // use "zero" for absolute values, "normalize" for percentages
-    },
-    "color": {
-      "field": "drivers_type",
-      "type": "nominal",
-      "title": "Driver Type",
-      "legend": {"orient": "right"}
-    },
-    "tooltip": [
-      {"field": "drivers_type", "title": "Driver"},
-      {"field": "loss_year", "title": "Year"},
-      {"aggregate": "sum", "field": "loss_area_ha", "title": "Loss (ha)", "format": ",.0f"}
-    ]
+    {
+      "width": 700,
+      "height": 100,
+      "data": {
+        "url": "https://raw.githubusercontent.com/brittany0111/FIT3179/main/tree_cover_loss_by_driver.csv"
+      },
+      "mark": {"type": "area", "interpolate": "monotone"},
+      "params": [
+        {
+          "name": "year_brush",
+          "select": {"type": "interval", "encodings": ["x"]}
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "loss_year",
+          "type": "ordinal",
+          "title": "Select Year Range"
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "loss_area_ha",
+          "title": "Total Loss (ha)",
+          "stack": "zero"
+        },
+        "color": {
+          "field": "drivers_type",
+          "type": "nominal",
+          "legend": null
+        }
+      }
+    }
+  ],
+  "config": {
+    "axis": {"labelFontSize": 12, "titleFontSize": 14},
+    "legend": {"labelFontSize": 12, "titleFontSize": 13}
   }
 }
