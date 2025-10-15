@@ -8,45 +8,49 @@
   },
   "transform": [
     {
-      "window": [
-        {
-          "op": "rank",
-          "as": "rank"
-        }
-      ],
-      "sort": [{"field": "forest_norm", "order": "descending"}],
-      "groupby": ["date"]
+    "calculate": "toNumber(datum.forest_norm)",
+    "as": "forest_norm_num"
+    },
+    {
+        "window": [
+            {
+            "op": "rank",
+            "as": "rank"
+            }
+        ],
+        "sort": [{"field": "forest_norm_num", "order": "descending"}],
+        "groupby": ["date"]
     }
-  ],
-  "mark": {
-    "type": "line",
-    "point": true,
-    "strokeWidth": 3
-  },
-  "encoding": {
-    "x": {
-      "field": "date",
-      "type": "ordinal",
-      "title": "Year"
+    ],
+    "mark": {
+        "type": "line",
+        "point": true,
+        "strokeWidth": 3
     },
-    "y": {
-      "field": "rank",
-      "type": "quantitative",
-      "sort": "descending",
-      "title": "Rank (1 = Largest % of Reserve Area)",
-      "axis": {"reverse": true}
-    },
-    "color": {
-      "field": "state",
-      "type": "nominal",
-      "title": "State",
-      "scale": {"scheme": "category20"}
-    },
-    "tooltip": [
-      {"field": "state", "title": "State"},
-      {"field": "date", "title": "Year"},
-      {"field": "forest_norm", "title": "Reserve Area (%)", "format": ".2f"},
-      {"field": "rank", "title": "Rank"}
-    ]
-  }
+    "encoding": {
+        "x": {
+            "field": "date",
+            "type": "ordinal",
+            "title": "Year"
+        },
+        "y": {
+            "field": "rank",
+            "type": "quantitative",
+            "sort": "descending",
+            "title": "Rank (1 = Largest % of Reserve Area)",
+            "axis": {"reverse": true}
+        },
+        "color": {
+            "field": "state",
+            "type": "nominal",
+            "title": "State",
+            "scale": {"scheme": "category20"}
+        },
+        "tooltip": [
+            {"field": "state", "title": "State"},
+            {"field": "date", "title": "Date"},
+            {"field": "forest_norm_num", "title": "Reserve Area (%)", "format": ".2f"},
+            {"field": "rank", "title": "Rank"}
+        ]
+    }
 }
