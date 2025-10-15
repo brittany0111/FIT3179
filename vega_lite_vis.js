@@ -3,3 +3,9 @@ vegaEmbed("#choropleth", vg_1).then(console.log).catch(console.error);
 
 var vg_2 = "HomeworkWeek10.vg.json";
 vegaEmbed("#line", vg_2).then(console.log).catch(console.error);
+
+var vg_3 = "BumpChart.vg.json";
+vegaEmbed("#bump", vg_2).then(console.log).catch(console.error);
+
+var vg_3 = "StackedArea.vg.json";
+vegaEmbed("#stacked_area", vg_2).then(console.log).catch(console.error);

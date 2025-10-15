@@ -39,7 +39,7 @@
           "field": "forest_norm",
           "type": "quantitative",
           "title": "Forest Cover (%)",
-          "scale": {"scheme": "greens"}
+          "scale": {"scheme": "purples"}
         },
         "tooltip": [
           {"field": "properties.name", "title": "State"},

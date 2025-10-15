@@ -1,10 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Ranking of Forest Reserve Areas by State Over Time (Bump Chart)",
+  "title": "Ranking of Forest Reserve Areas by State Over Time",
   "width": 700,
   "height": 400,
   "data": {
-    "url": "https://raw.githubusercontent.com/brittany0111/FIT3179/main/forest_reserve_state_normalized.csv"
+    "url": "https://raw.githubusercontent.com/brittany0111/FIT3179/main/forest_reserve_state_norm_clean.csv"
   },
   "transform": [
     {
@@ -32,19 +32,20 @@
     "y": {
       "field": "rank",
       "type": "quantitative",
-      "sort": "ascending",
-      "title": "Rank (1 = Largest Reserve Area)",
+      "sort": "descending",
+      "title": "Rank (1 = Largest % of Reserve Area)",
       "axis": {"reverse": true}
     },
     "color": {
       "field": "state",
       "type": "nominal",
-      "title": "State"
+      "title": "State",
+      "scale": {"scheme": "category20"}
     },
     "tooltip": [
       {"field": "state", "title": "State"},
-      {"field": "year", "title": "Year"},
-      {"field": "reserve_area", "title": "Reserve Area"},
+      {"field": "date", "title": "Year"},
+      {"field": "forest_norm", "title": "Reserve Area (%)", "format": ".2f"},
       {"field": "rank", "title": "Rank"}
     ]
   }

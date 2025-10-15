@@ -22,7 +22,7 @@
           "type": "quantitative",
           "title": "Reserve Area (hectares)"
         },
-        "color": { "field": "state", "type": "nominal", "legend": { "title": "State" , "orient":"right","offset":70} },
+        "color": { "field": "state", "scale": {"scheme": "category20"},"type": "nominal", "legend": { "title": "State" , "orient":"right","offset":70} },
         "opacity": {
           "condition": { "selection": "state_highlight", "value": 1 },
           "value": 0.2
