@@ -11,14 +11,28 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
 
     <script src="vega_lite_vis.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="container">
+
         <h1>Malaysia's Forestry Scene</h1>
+        <p class="intro-para">Malaysia is home to some of the world's most <span class="bold">biodiverse tropical forests</span>, which
+            play a crucial role in maintaining ecological balance, supporting livelihoods,
+            and mitigating climate change. Over the past two decades, however, the country
+            has faced <span class="bold">growing challenges</span> in balancing economic development with forest
+            conservation. This visualization explores the dynamics of Malaysia's forestry
+            landscape, from the extent of forest reserves across states to changes in tree
+            cover and the drivers of forest loss, offering insights into how conservation
+            efforts have evolved over time.</p>
+
 
         <h2>% of Forest Reserves by State in Malaysia (2021)</h2>
-        <div id="choropleth"></div>
+        <div class="choropleth-section">
+            <div id="choropleth"></div>
+        </div>
+    
 
         <h2>Forest Reserve Area by State (2003-2021)</h2>
         <div id="line"></div>

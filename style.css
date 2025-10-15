@@ -1,0 +1,101 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+    background: #f8fafc;
+    color: #1e293b;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1080px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+}
+
+.intro-para {
+    max-width: 850px;
+    margin: 0 auto 3rem auto;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #333;
+    text-align: justify;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.bold {
+    font-weight: 600;
+    color: #491372;
+}
+
+/* Headings */
+h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #0f172a;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: -0.5px;
+}
+
+h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 40px 0 20px;
+    border-left: 5px solid #3b82f6;
+    padding-left: 12px;
+}
+/* Make Vega-Lite charts responsive */
+.vega-embed,
+.vega-embed > div,
+.vega-embed svg,
+.vega-embed canvas {
+    max-width: 100% !important;
+    height: auto !important;
+}
+/* Visualization Containers */
+#choropleth,
+#line,
+#bump,
+#stacked_area {
+    margin-bottom: 40px;
+    background: #f1f5f9;
+    border-radius: 10px;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+#choropleth:hover,
+#line:hover,
+#bump:hover,
+#stacked_area:hover {
+    background: #e2e8f0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+}
