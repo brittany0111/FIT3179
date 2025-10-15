@@ -7,5 +7,5 @@ vegaEmbed("#line", vg_2).then(console.log).catch(console.error);
 var vg_3 = "BumpChart.vg.json";
 vegaEmbed("#bump", vg_3).then(console.log).catch(console.error);
 
-var vg_3 = "StackedArea.vg.json";
+var vg_4 = "StackedArea.vg.json";
 vegaEmbed("#stacked_area", vg_4).then(console.log).catch(console.error);
