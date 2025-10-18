@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Forest Reserves in Malaysia (2003–2021)",
+  "title": "Forest Reserves in Malaysia (2003-2021)",
   "vconcat": [
     {
       "width": 700,
@@ -38,7 +38,7 @@
       "width": 700,
       "height": 100,
       "data": {
-        "url": "https://raw.githubusercontent.com/brittany0111/FIT3179/main/forest_reserve_filtered.csv"
+        "url": "https://raw.githubusercontent.com/brittany0111/FIT3179/main/forest_reserve_state_normalized_clean.csv"
       },
       "mark": {"type": "area", "interpolate": "monotone"},
       "params": [
@@ -49,7 +49,7 @@
       ],
       "encoding": {
         "x": { "field": "date", "type": "temporal", "title": "Select Year Range" },
-        "y": { "aggregate": "sum", "field": "area", "title": "Total Area (ha)", "stack": "zero" },
+        "y": { "aggregate": "sum", "field": "forest_area", "title": "Total Area (ha)", "stack": "zero" },
         "color": {"value": "#aaa"}
       }
     }
