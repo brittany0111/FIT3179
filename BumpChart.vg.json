@@ -4,7 +4,7 @@
   "width": 700,
   "height": 400,
   "data": {
-    "url": "https://raw.githubusercontent.com/brittany0111/FIT3179/main/forest_reserve_state_norm_clean.csv"
+    "url": "https://raw.githubusercontent.com/brittany0111/FIT3179/main/forest_reserve_state_normalized_clean.csv"
   },
   "transform": [
     {
@@ -22,35 +22,144 @@
         "groupby": ["date"]
     }
     ],
-    "mark": {
-        "type": "line",
-        "point": true,
-        "strokeWidth": 3
-    },
-    "encoding": {
-        "x": {
-            "field": "date",
-            "type": "ordinal",
-            "title": "Year"
+    "layer": [
+        {
+            "mark": {
+                "type": "line",
+                "point": true,
+                "strokeWidth": 3
+            },
+            "encoding": {
+                "x": {
+                    "field": "date",
+                    "type": "ordinal",
+                    "title": "Year"
+                },
+                "y": {
+                    "field": "rank",
+                    "type": "quantitative",
+                    "sort": "descending",
+                    "title": "Rank (1 = Largest % of Reserve Area)",
+                    "axis": {"reverse": true}
+                },
+                "color": {
+                    "field": "state",
+                    "type": "nominal",
+                    "title": "State",
+                    "scale": {"scheme": "category20c"}
+                },
+                "tooltip": [
+                    {"field": "state", "title": "State"},
+                    {"field": "date", "title": "Date"},
+                    {"field": "forest_norm", "title": "Reserve Area (%)", "format": ".2f"},
+                    {"field": "rank", "title": "Rank"}
+                ]
+            }
         },
-        "y": {
-            "field": "rank",
-            "type": "quantitative",
-            "sort": "descending",
-            "title": "Rank (1 = Largest % of Reserve Area)",
-            "axis": {"reverse": true}
+        {
+            "data": {
+                "values": [{"text": "Sabah"}]
+            },
+            "mark": {
+                "type": "text",
+                "font": "Helvetica Neue",
+                "fontWeight": "bold",
+                "align": "left",
+                "fontSize": 14,
+                "fill": "#5254a3",
+                "radius": 4,
+                "dx": 610,
+                "dy": 18
+            },
+            "encoding": {
+                "longitude": {"field": "longitude", "type": "quantitative"},
+                "latitude": {"field": "latitude", "type": "quantitative"},
+                "text": {"field": "text"}
+            }
         },
-        "color": {
-            "field": "state",
-            "type": "nominal",
-            "title": "State",
-            "scale": {"scheme": "category20"}
+        {
+            "data": {
+                "values": [{"text": "Perak"}]
+            },
+            "mark": {
+                "type": "text",
+                "font": "Helvetica Neue",
+                "fontWeight": "bold",
+                "align": "left",
+                "fontSize": 14,
+                "fill": "#31a354",
+                "radius": 4,
+                "dx": 610,
+                "dy": 45
+            },
+            "encoding": {
+                "longitude": {"field": "longitude", "type": "quantitative"},
+                "latitude": {"field": "latitude", "type": "quantitative"},
+                "text": {"field": "text"}
+            }
         },
-        "tooltip": [
-            {"field": "state", "title": "State"},
-            {"field": "date", "title": "Date"},
-            {"field": "forest_norm_num", "title": "Reserve Area (%)", "format": ".2f"},
-            {"field": "rank", "title": "Rank"}
-        ]
-    }
+        {
+            "data": {
+                "values": [{"text": "Pahang"}]
+            },
+            "mark": {
+                "type": "text",
+                "font": "Helvetica Neue",
+                "fontWeight": "bold",
+                "align": "left",
+                "fontSize": 14,
+                "fill": "#fdd0a2",
+                "radius": 4,
+                "dx": 610,
+                "dy": 70
+            },
+            "encoding": {
+                "longitude": {"field": "longitude", "type": "quantitative"},
+                "latitude": {"field": "latitude", "type": "quantitative"},
+                "text": {"field": "text"}
+            }
+        },
+        {
+            "data": {
+                "values": [{"text": "Kelantan"}]
+            },
+            "mark": {
+                "type": "text",
+                "font": "Helvetica Neue",
+                "fontWeight": "bold",
+                "align": "left",
+                "fontSize": 14,
+                "fill": "#9ecae1",
+                "radius": 4,
+                "dx": 610,
+                "dy": 95
+            },
+            "encoding": {
+                "longitude": {"field": "longitude", "type": "quantitative"},
+                "latitude": {"field": "latitude", "type": "quantitative"},
+                "text": {"field": "text"}
+            }
+        },
+        {
+            "data": {
+                "values": [{"text": "Terengganu"}]
+            },
+            "mark": {
+                "type": "text",
+                "font": "Helvetica Neue",
+                "fontWeight": "bold",
+                "align": "left",
+                "fontSize": 14,
+                "fill": "#c6cfef",
+                "radius": 4,
+                "dx": 610,
+                "dy":120
+            },
+            "encoding": {
+                "longitude": {"field": "longitude", "type": "quantitative"},
+                "latitude": {"field": "latitude", "type": "quantitative"},
+                "text": {"field": "text"}
+            }
+        }
+    ]
 }

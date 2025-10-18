@@ -20,9 +20,14 @@
         }
       ],
       "encoding": {
-        "x": { "field": "date", "type": "temporal", "title": "Year" },
+        "x": { "field": "date", "type": "ordinal", "title": "Year" },
         "y": { "field": "forest_area", "type": "quantitative", "title": "Reserve Area (hectares)" },
-        "color": { "field": "state", "type": "nominal", "legend": {"title": "State", "orient": "right", "offset": 70} },
+        "color": {
+          "field": "state",
+          "type": "nominal",
+          "legend": {"title": "State", "orient": "right", "offset": 70},
+          "scale": {"scheme": "paired"}
+        },
         "opacity": {
           "condition": {"param": "state_select", "value": 1},
           "value": 0.2
@@ -30,7 +35,7 @@
         "tooltip": [
           {"field": "state", "type": "nominal", "title": "State"},
           {"field": "forest_area", "type": "quantitative", "title": "Reserve Area (ha)", "format": ",.0f"},
-          {"field": "date", "type": "temporal", "title": "Date"}
+          {"field": "date", "type": "ordinal", "title": "Year"}
         ]
       }
     },
@@ -48,9 +53,9 @@
         }
       ],
       "encoding": {
-        "x": { "field": "date", "type": "temporal", "title": "Select Year Range" },
-        "y": { "aggregate": "sum", "field": "forest_area", "title": "Total Area (ha)", "stack": "zero" },
-        "color": {"value": "#aaa"}
+        "x": { "field": "date", "type": "ordinal", "title": "Select Year Range" },
+        "y": { "aggregate": "sum", "field": "forest_area", "title": "Total Area (ha)" },
+        "color": {"value": "#69b3a2"}
       }
     }
   ],
