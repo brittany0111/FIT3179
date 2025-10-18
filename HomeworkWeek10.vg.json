@@ -1,61 +1,61 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": { "text": "Forest Reserves in Malaysia (2003–2021)" },
-  "data": {
-    "url": "https://raw.githubusercontent.com/brittany0111/FIT3179/main/forest_reserve_filtered.csv"
-  },
-  "width": 400,
-  "layer": [
+  "title": "Forest Reserves in Malaysia (2003–2021)",
+  "vconcat": [
     {
-      "selection": {
-        "state_highlight": {
-          "type": "multi",
-          "fields": ["state"],
+      "width": 700,
+      "height": 400,
+      "data": {
+        "url": "https://raw.githubusercontent.com/brittany0111/FIT3179/main/forest_reserve_state_normalized_clean.csv"
+      },
+      "transform": [
+        {"filter": {"param": "year_brush"}}
+      ],
+      "mark": { "type": "line", "point": true },
+      "params": [
+        {
+          "name": "state_select",
+          "select": {"type": "point", "fields": ["state"]},
           "bind": "legend"
         }
-      },
-      "mark": { "type": "line", "point": true },
+      ],
       "encoding": {
         "x": { "field": "date", "type": "temporal", "title": "Year" },
-        "y": {
-          "field": "area",
-          "type": "quantitative",
-          "title": "Reserve Area (hectares)"
-        },
-        "color": { "field": "state", "scale": {"scheme": "category20"},"type": "nominal", "legend": { "title": "State" , "orient":"right","offset":70} },
+        "y": { "field": "forest_area", "type": "quantitative", "title": "Reserve Area (hectares)" },
+        "color": { "field": "state", "type": "nominal", "legend": {"title": "State", "orient": "right", "offset": 70} },
         "opacity": {
-          "condition": { "selection": "state_highlight", "value": 1 },
+          "condition": {"param": "state_select", "value": 1},
           "value": 0.2
         },
         "tooltip": [
-          { "field": "state", "type": "nominal", "title": "State" },
-          { "field": "area", "type": "quantitative", "title": "Reserve Area (ha)", "format": ",.0f" },
-          { "field": "date", "type": "temporal", "title": "Date" }
+          {"field": "state", "type": "nominal", "title": "State"},
+          {"field": "forest_area", "type": "quantitative", "title": "Reserve Area (ha)", "format": ",.0f"},
+          {"field": "date", "type": "temporal", "title": "Date"}
         ]
       }
     },
     {
+      "width": 700,
+      "height": 100,
       "data": {
-        "values": [
-          { "state": "Sabah", "date": "2021-01-01", "area": 3574468 },
-          { "state": "Pahang", "date": "2021-01-01", "area": 1588298 },
-          { "state": "Sarawak", "date": "2021-01-01", "area": 3964880 }
-        ]
+        "url": "https://raw.githubusercontent.com/brittany0111/FIT3179/main/forest_reserve_filtered.csv"
       },
-      "mark": {
-        "type": "text",
-        "align": "left",
-        "dx": 6,
-        "dy": -5,
-        "fontSize": 13,
-        "fontWeight": "bold"
-      },
+      "mark": {"type": "area", "interpolate": "monotone"},
+      "params": [
+        {
+          "name": "year_brush",
+          "select": {"type": "interval", "encodings": ["x"]}
+        }
+      ],
       "encoding": {
-        "x": { "field": "date", "type": "temporal" },
-        "y": { "field": "area", "type": "quantitative" },
-        "text": { "field": "area" },
-        "color": { "field": "state", "type": "nominal" }
+        "x": { "field": "date", "type": "temporal", "title": "Select Year Range" },
+        "y": { "aggregate": "sum", "field": "area", "title": "Total Area (ha)", "stack": "zero" },
+        "color": {"value": "#aaa"}
       }
     }
-  ]
+  ],
+  "config": {
+    "axis": {"labelFontSize": 12, "titleFontSize": 14},
+    "legend": {"labelFontSize": 12, "titleFontSize": 13}
+  }
 }

@@ -44,8 +44,7 @@
         "tooltip": [
           {"field": "properties.name", "title": "State"},
           {"field": "forest_norm", "title": "Forest Cover (%)", "format": ".2f"},
-          {"field": "forest_area", "title": "Forest Area (ha)", "format": ",.0f"},
-          {"field": "date", "title": "Year"}
+          {"field": "forest_area", "title": "Forest Area (ha)", "format": ",.2f"}
         ]
       }
     },
