@@ -78,11 +78,11 @@
       "font": "Helvetica Neue",
       "fontWeight": "bold",
       "align": "right",
-      "fontSize": 18,
+      "fontSize": 20,
       "fill": "#41085d",
       "radius": 4,
-      "dx": 80,
-      "dy": -10
+      "dx": 47,
+      "dy": -11
     },
     "encoding": {
       "longitude": {"field": "longitude", "type": "quantitative"},
@@ -99,11 +99,11 @@
       "font": "Helvetica Neue",
       "fontWeight": "bold",
       "align": "right",
-      "fontSize": 18,
+      "fontSize": 20,
       "fill": "#41085d",
       "radius": 4,
-      "dx": 197,
-      "dy": -10
+      "dx": 205,
+      "dy": -3
     },
     "encoding": {
       "longitude": {"field": "longitude", "type": "quantitative"},
@@ -115,15 +115,15 @@
     "data": {
       "values": [
         {"line": "stands out with the", "longitude": 110, "latitude": 6.3},
-        {"line": "highest percentage of forest cover", "longitude": 110, "latitude": 5.87},
-        {"line": "in Malaysia of ", "longitude": 108, "latitude": 5.4}
+        {"line": "highest percentage of forest cover", "longitude": 110, "latitude": 5.75},
+        {"line": "in Malaysia of ", "longitude": 108, "latitude": 5.2}
       ]
     },
     "mark": {
       "type": "text",
       "font": "Helvetica Neue",
       "align": "right",
-      "fontSize": 14,
+      "fontSize": 18,
       "fill": "#3B0A45",
       "radius": 4,
       "dx": 205,
@@ -167,7 +167,7 @@
       "font": "Helvetica Neue",
       "fontWeight": "bold",
       "align": "left",
-      "fontSize": 18,
+      "fontSize": 20,
       "fill": "#814d8c",
       "radius": 4,
       "dx": 165,
@@ -188,11 +188,11 @@
       "font": "Helvetica Neue",
       "fontWeight": "bold",
       "align": "left",
-      "fontSize": 18,
+      "fontSize": 20,
       "fill": "#814d8c",
       "radius": 4,
-      "dx": 165,
-      "dy": -10
+      "dx": 205,
+      "dy": -7
     },
     "encoding": {
       "longitude": {"field": "longitude", "type": "quantitative"},
@@ -203,16 +203,16 @@
     {
     "data": {
       "values": [
-        {"line": "As Malaysia's most urbanized area, ", "longitude": 102, "latitude": 3.3},
-        {"line": "shows the", "longitude": 105.3, "latitude": 2.8},
-        {"line": "lowest forest cover of", "longitude": 102, "latitude": 2.3}
+        {"line": "As Malaysia's most urbanized area, ", "longitude": 102, "latitude": 3.4},
+        {"line": "shows the", "longitude": 105.65, "latitude": 2.8},
+        {"line": "lowest forest cover of", "longitude": 102, "latitude": 2.2}
       ]
     },
     "mark": {
       "type": "text",
       "font": "Helvetica Neue",
       "align": "left",
-      "fontSize": 14,
+      "fontSize": 18,
       "fill": "#814d8c",
       "radius": 4,
       "dx": 90,

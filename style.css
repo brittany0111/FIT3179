@@ -25,25 +25,24 @@ body {
 }
 
 .intro-container {
-  overflow: hidden; /* ensures container wraps floated elements */
-  margin: 20px;
+    position: relative;
+    width: 100%;
+    height: 150px; /* adjust as needed */
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('forest.jpg');
+    background-size: cover; /* image covers entire container */
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
 }
 
-.intro-image {
-  float: left; /* image floats to the left of the text */
-  width: 30%;   /* adjust size as needed */
-  margin-right: 30px; /* space between image and text */
-  height: auto;
-}
-
-.intro-container p{
-    max-width: 850px;
-    margin: 0 auto 3rem auto;
-    font-size: 18px;
-    line-height: 1.8;
-    color: #333;
-    text-align: justify;
-    font-family: 'Open Sans', sans-serif;
+.intro-container h1 {
+    color: #ffffff; /* make text stand out */
+    font-size: 3.2rem;
+    font-weight: 900;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.6); /* subtle shadow for readability */
+    text-align: center;
 }
 
 
@@ -58,19 +57,43 @@ h1 {
     font-weight: 900;
     color: #0f172a;
     text-align: center;
-    margin-bottom: 40px;
     letter-spacing: -0.5px;
     font-family: 'Open Sans', serif;
 }
 
 h2 {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: 600;
     color: #1e293b;
     margin: 40px 0 20px;
-    border-left: 5px solid #3b82f6;
+    font-family: 'Open Sans', serif;
+    border-left: 5px solid #510c97;
     padding-left: 12px;
 }
+
+.choropleth-section {
+    display: flex;
+    gap: 30px; /* space between the map and paragraph */
+    align-items: flex-start; /* align top of chart and text */
+    margin-bottom: 40px;
+}
+
+.choropleth-section #choropleth {
+    flex: 2; /* map takes more space */
+    min-width: 700px; /* ensures the map doesn't shrink too much */
+}
+
+.choropleth-section p {
+    flex: 1; /* paragraph takes less space */
+    font-size: 15px;
+    line-height: 1.8;
+    color: #333;
+    text-align: justify;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+
 /* Make Vega-Lite charts responsive */
 .vega-embed,
 .vega-embed > div,

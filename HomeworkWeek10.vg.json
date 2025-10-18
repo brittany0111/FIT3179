@@ -26,7 +26,7 @@
           "field": "state",
           "type": "nominal",
           "legend": {"title": "State", "orient": "right", "offset": 70},
-          "scale": {"scheme": "paired"}
+          "scale": {"scheme": "category20c"}
         },
         "opacity": {
           "condition": {"param": "state_select", "value": 1},
@@ -45,7 +45,7 @@
       "data": {
         "url": "https://raw.githubusercontent.com/brittany0111/FIT3179/main/forest_reserve_state_normalized_clean.csv"
       },
-      "mark": {"type": "area", "interpolate": "monotone"},
+      "mark": {"type": "line", "interpolate": "monotone"},
       "params": [
         {
           "name": "year_brush",
@@ -54,8 +54,13 @@
       ],
       "encoding": {
         "x": { "field": "date", "type": "ordinal", "title": "Select Year Range" },
-        "y": { "aggregate": "sum", "field": "forest_area", "title": "Total Area (ha)" },
-        "color": {"value": "#69b3a2"}
+        "y": { "field": "forest_area", "type": "quantitative", "title": "Reserve Area (ha)" },
+        "color": {
+          "field": "state",
+          "type": "nominal",
+          "scale": {"scheme": "paired"},
+          "legend": null
+        }
       }
     }
   ],
