@@ -24,25 +24,78 @@
       "data": {
         "url": "https://raw.githubusercontent.com/brittany0111/FIT3179/main/tree_cover_gain.csv"
       },
-      "mark": {
-        "type": "point",
-        "shape": "triangle-up",
-        "filled": true
-      },
+      "mark": { "type": "circle", "filled": true, "stroke": "white", "strokeWidth": 0.5, "opacity": 0.7},
       "encoding": {
         "longitude": {"field": "Long", "type": "quantitative"},
         "latitude": {"field": "Lat", "type": "quantitative"},
         "size": {
           "field": "tree_cover_gain",
           "type": "quantitative",
-          "scale": {"type": "sqrt", "range": [50, 2500]},
-          "legend": {"title": "Tree Cover Gain"}
+          "scale": {"type": "sqrt", "range": [5, 2000]},
+          "legend": {
+            "title": "Tree Cover Gain (ha)",
+            "values": [10000, 50000, 150000, 300000]  
+          }
         },
         "color": {"value": "#2b8cbe"},
         "tooltip": [
-          {"field": "state", "title": "State"},
+          {"field": "State", "title": "State"},
           {"field": "tree_cover_gain", "title": "Tree Cover Gain (ha)", "format": ",.0f"}
         ]
+      }
+    },
+    {
+      "data": {
+        "values": [{"State": "Sabah", "longitude": 116.07, "latitude": 5.4}]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 14,
+        "fontWeight": "bold",
+        "fill": "#333",
+        "dx": 50,
+        "dy": -8
+      },
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "text": {"field": "State"}
+      }
+    },
+    {
+    "data": {
+        "values": [{"State": "Sarawak", "longitude": 113.5, "latitude": 2.5}]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 14,
+        "fontWeight": "bold",
+        "fill": "#333",
+        "dx": 15,
+        "dy": -8
+      },
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "text": {"field": "State"}
+      }
+    },
+    {
+    "data": {
+        "values": [{"State": "Pahang", "longitude": 102.4, "latitude": 3.8}]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 14,
+        "fontWeight": "bold",
+        "fill": "#333",
+        "dx": 28,
+        "dy": -8
+      },
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "text": {"field": "State"}
       }
     }
   ]
