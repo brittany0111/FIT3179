@@ -3,20 +3,6 @@
   "width": 800,
   "height": 300,
   "projection": {"type": "mercator"},
-  "params": [
-    {
-      "name": "selectedYear",
-      "value": 2021,
-      "bind": {
-        "input": "range",
-        "min": 2003,
-        "max": 2021,
-        "step": 1,
-        "name": "Year: "
-      }
-    }
-  ],
-
   "layer": [
     {
       "data": {
@@ -25,8 +11,7 @@
           "extent": [[99, 1], [120, 8]]
         }
       },
-      "mark": {"type": "geoshape", "stroke": "#ccc", "strokeWidth": 0.5},
-      "encoding": {"color": {"legend": null}}
+      "mark": {"type": "geoshape", "stroke": "#ccc", "strokeWidth": 0.5}
     },
     {
       "data": {
@@ -44,11 +29,9 @@
               "url": "https://raw.githubusercontent.com/brittany0111/FIT3179/main/forest_reserve_state_normalized_clean.csv"
             },
             "key": "state",
-            "fields": ["date", "forest_area", "total_area", "forest_norm"]
+            "fields": ["forest_area", "total_area", "forest_norm", "date"]
           }
-        },
-        {"calculate": "toNumber(datum.date)", "as": "year"},
-{"filter": "datum.year !== null && datum.year === selectedYear"}   
+        }
       ],
       "mark": {"type": "geoshape"},
       "encoding": {
