@@ -13,10 +13,7 @@
     },
     {
         "window": [
-            {
-            "op": "rank",
-            "as": "rank"
-            }
+            {"op": "rank", "as": "rank"}
         ],
         "sort": [{"field": "forest_norm_num", "order": "descending"}],
         "groupby": ["date"]
@@ -39,8 +36,7 @@
                     "field": "rank",
                     "type": "quantitative",
                     "sort": "descending",
-                    "title": "Rank (1 = Largest % of Reserve Area)",
-                    "axis": {"reverse": true}
+                    "title": "Rank (1 = Largest % of Reserve Area)"
                 },
                 "color": {
                     "field": "state",

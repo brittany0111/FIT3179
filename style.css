@@ -46,32 +46,44 @@ body {
 }
 
 
-.bold {
+.bold-purple {
+    font-size: 18px;
     font-weight: 600;
     color: #491372;
 }
 
+.bold-violet {
+    font-size: 20px;
+    font-weight: 600;
+    color: #381890;
+}
+
 .bold-green {
+    font-size: 20px;
     font-weight: 600;
     color: #0f5a10;
 }
 
 .bold-blue {
+    font-size: 20px;
     font-weight: 600;
     color: #6a9ae6;
 }
 
 .bold-orange {
+    font-size: 20px;
     font-weight: 600;
     color: #e7bf85;
 }
 
 .bold-dark-orange {
+    font-size: 20px;
     font-weight: 600;
     color: #d25e0b;
 }
 
 .bold-teal {
+    font-size: 20px;
     font-weight: 600;
     color: #11b6c2;
 }
@@ -110,7 +122,7 @@ h2 {
 
 .choropleth-section p {
     flex: 1; /* paragraph takes less space */
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.8;
     color: #333;
     text-align: justify;
@@ -128,7 +140,7 @@ h2 {
   flex: 1;
   max-width: 25%;
   line-height: 1.8;
-  font-size: 15px;
+  font-size: 14px;
   color: #333;
   text-align: justify;
 }

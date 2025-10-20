@@ -63,8 +63,8 @@
         "strokeWidth": 2
       },
       "encoding": {
-        "longitude": {"field": "x1", "type": "quantitative"},
-        "latitude": {"field": "y1", "type": "quantitative"},
+        "longitude": {"field": "x1"},
+        "latitude": {"field": "y1"},
         "longitude2": {"field": "x2"},
         "latitude2": {"field": "y2"}
       }

@@ -57,7 +57,7 @@
         "color": {
           "field": "state",
           "type": "nominal",
-          "scale": {"scheme": "paired"},
+          "scale": {"scheme": "category20c"},
           "legend": null
         }
       }
