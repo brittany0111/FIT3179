@@ -1,0 +1,70 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Tree Cover Loss by Driver",
+  "width": 400,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/brittany0111/FIT3179/main/tree_cover_loss_by_driver.csv"
+  },
+  "params": [
+    {
+      "name": "year_slider",
+      "value": 2021,
+      "bind": {
+        "input": "range",
+        "min": 2003,
+        "max": 2021,
+        "step": 1,
+        "name": "Year: "
+      }
+    },
+    {
+        "name": "driver_select",
+        "select": {"type": "point", "fields": ["drivers_type"]}
+    }
+  ],
+  "transform": [
+    { "filter": "datum.loss_year == year_slider" }
+  ],
+  "mark": {
+    "type": "arc",
+    "innerRadius": 100,
+    "outerRadius": 180,
+    "stroke": "#fff",
+    "strokeWidth": 2
+  },
+  
+  "encoding": {
+    "theta": {
+      "field": "loss_area_ha",
+      "type": "quantitative",
+      "title": "Loss Area (ha)"
+    },
+    "opacity": {
+        "condition": {"param": "driver_select", "value": 1},
+        "value": 0.2
+    },
+    "color": {
+      "field": "drivers_type",
+      "type": "nominal",
+      "title": "Driver Type",
+      "scale": { "scheme": "tableau10" },
+      "legend": { "orient": "right" }
+    },
+    "tooltip": [
+      { "field": "drivers_type", "type": "nominal", "title": "Driver" },
+      {
+        "field": "loss_area_ha",
+        "type": "quantitative",
+        "title": "Loss Area (ha)",
+        "format": ",.0f"
+      }
+    ]
+  },
+  "view": { "stroke": null },
+  "config": {
+    "legend": { "labelFontSize": 12, "titleFontSize": 13 },
+    "title": { "fontSize": 18, "anchor": "start", "fontWeight": "bold" },
+    "range": { "category": { "scheme": "tableau10" } }
+  }
+}

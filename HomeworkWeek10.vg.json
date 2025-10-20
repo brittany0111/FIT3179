@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Forest Reserves in Malaysia (2003-2021)",
   "vconcat": [
     {
       "width": 700,
