@@ -65,7 +65,11 @@
           "field": "tree_cover_gain",
           "type": "quantitative",
           "scale": {"type": "sqrt", "range": [5, 2000]}
-        }
+        },
+        "tooltip": [
+          {"field": "State", "title": "State"},
+          {"field": "tree_cover_gain", "title": "Tree Cover Gain (ha)", "format": ",.0f"}
+        ]
       }
     },
     {
