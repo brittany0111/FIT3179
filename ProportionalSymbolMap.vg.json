@@ -74,6 +74,62 @@
     },
     {
       "data": {
+        "url": "https://raw.githubusercontent.com/brittany0111/FIT3179/main/tree_cover_gain.csv"
+      },
+      "transform": [
+        {"filter": "datum.State == 'Sabah'"}
+      ],
+      "mark": {
+        "type": "circle",
+        "stroke": "#03308a",
+        "strokeWidth": 3,
+        "fill": "none",
+        "opacity": 1
+      },
+      "encoding": {
+        "longitude": {"field": "Long", "type": "quantitative"},
+        "latitude": {"field": "Lat", "type": "quantitative"},
+        "size": {
+          "field": "tree_cover_gain",
+          "type": "quantitative",
+          "scale": {"type": "sqrt", "range": [5, 2000]}
+        },
+        "tooltip": [
+          {"field": "State", "title": "State"},
+          {"field": "tree_cover_gain", "title": "Tree Cover Gain (ha)", "format": ",.0f"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/brittany0111/FIT3179/main/tree_cover_gain.csv"
+      },
+      "transform": [
+        {"filter": "datum.State == 'Pahang'"}
+      ],
+      "mark": {
+        "type": "circle",
+        "stroke": "#03308a",
+        "strokeWidth": 3,
+        "fill": "none",
+        "opacity": 1
+      },
+      "encoding": {
+        "longitude": {"field": "Long", "type": "quantitative"},
+        "latitude": {"field": "Lat", "type": "quantitative"},
+        "size": {
+          "field": "tree_cover_gain",
+          "type": "quantitative",
+          "scale": {"type": "sqrt", "range": [5, 2000]}
+        },
+        "tooltip": [
+          {"field": "State", "title": "State"},
+          {"field": "tree_cover_gain", "title": "Tree Cover Gain (ha)", "format": ",.0f"}
+        ]
+      }
+    },
+    {
+      "data": {
         "values": [
           {
             "x1": 111.6, "y1": 3.7,  
@@ -102,11 +158,11 @@
         "font": "Helvetica Neue",
         "fontWeight": "bold",
         "align": "center",
-        "fontSize": 20,
+        "fontSize": 17,
         "fill": "#04148d",
         "radius": 4,
         "dx": 13,
-        "dy": 42
+        "dy": 45
       },
       "encoding": {
         "longitude": {"field": "longitude", "type": "quantitative"},
@@ -123,7 +179,7 @@
         "font": "Helvetica Neue",
         "fontWeight": "bold",
         "align": "center",
-        "fontSize": 20,
+        "fontSize": 17,
         "fill": "#03308a",
         "radius": 4,
         "dx": 13,
@@ -146,7 +202,7 @@
         "type": "text",
         "font": "Helvetica Neue",
         "align": "center",
-        "fontSize": 18,
+        "fontSize": 16,
         "fill": "#4e5ac7",
         "radius": 4,
         "dx": 180,
@@ -156,6 +212,48 @@
         "longitude": {"field": "longitude", "type": "quantitative"},
         "latitude": {"field": "latitude", "type": "quantitative"},
         "text": {"field": "line"}
+      }
+    },
+    {
+      "data": {
+        "values": [{"text": "Sabah","longitude": 115, "latitude": 7.2}]
+      },
+      "mark": {
+        "type": "text",
+        "font": "Helvetica Neue",
+        "fontWeight": "bold",
+        "align": "center",
+        "fontSize": 17,
+        "fill": "#04148d",
+        "radius": 4,
+        "dx": 13,
+        "dy": 45
+      },
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "text": {"field": "text"}
+      }
+    },
+    {
+      "data": {
+        "values": [{"text": "Pahang","longitude": 103.5, "latitude": 5.1}]
+      },
+      "mark": {
+        "type": "text",
+        "font": "Helvetica Neue",
+        "fontWeight": "bold",
+        "align": "center",
+        "fontSize": 17,
+        "fill": "#04148d",
+        "radius": 4,
+        "dx": 13,
+        "dy": 45
+      },
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "text": {"field": "text"}
       }
     }
   ]

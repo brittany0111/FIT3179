@@ -12,3 +12,6 @@ vegaEmbed("#donut", vg_4).then(console.log).catch(console.error);
 
 var vg_5 = "ProportionalSymbolMap.vg.json";
 vegaEmbed("#prop_symbol", vg_5).then(console.log).catch(console.error);
+
+var vg_6 = "BarChart.vg.json";
+vegaEmbed("#bar", vg_6).then(console.log).catch(console.error);

@@ -1,0 +1,78 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Tree Cover Loss by Region",
+    "color": "#292929",
+    "fontSize": 18,
+    "fontWeight": "bold",
+    "font": "Open Sans",
+    "anchor": "start"
+  },
+  "width": 600,
+  "height": 350,
+  "data": {
+    "url": "https://raw.githubusercontent.com/brittany0111/FIT3179/main/tree_loss_by_region.csv"
+  },
+  "params": [
+    {
+      "name": "year_slider",
+      "value": 2021,
+      "bind": {
+        "input": "range",
+        "min": 2001,
+        "max": 2020,
+        "step": 1,
+        "name": "Year: "
+      }
+    },
+    {
+      "name": "highlight",
+      "select": {"type": "point", "fields": ["state"]}
+    }
+  ],
+  "transform": [
+    { "filter": "datum.loss_year == year_slider" }
+  ],
+  "mark": {
+    "type": "bar",
+    "cornerRadiusEnd": 3
+  },
+  "encoding": {
+    "y": {
+      "field": "state",
+      "type": "nominal",
+      "sort": "-x",
+      "title": "State"
+    },
+    "x": {
+      "field": "loss_ha",
+      "type": "quantitative",
+      "title": "Tree Cover Loss (ha)",
+      "axis": {"grid": false}
+    },
+    "color": {
+      "condition": {
+        "test": "datum.state == 'Sabah' || datum.state == 'Sarawak' || datum.state == 'Pahang'",
+        "value": "#ad1a10"
+      },
+      "value": "#cccccc"
+    },
+    "opacity": {
+      "condition": {"param": "highlight", "value": 1},
+      "value": 0.3
+    },
+    "tooltip": [
+      {"field": "state", "title": "State"},
+      {
+        "field": "loss_ha",
+        "title": "Tree Cover Loss (ha)",
+        "format": ",.0f"
+      },
+      {"field": "loss_year", "title": "Year"}
+    ]
+  },
+  "config": {
+    "axis": {"labelFontSize": 12, "titleFontSize": 13},
+    "view": {"stroke": null}
+  }
+}

@@ -2,11 +2,11 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
   "text": "Tree Cover Loss by Driver",
-  "color": "#7a7a7a",  
+  "color": "#292929",  
   "fontSize": 18,
   "fontWeight": "bold",
   "font": "Open Sans",
-  "anchor": "start"
+  "anchor": "middle"
 },
   "width": 400,
   "height": 400,
@@ -41,8 +41,6 @@
     "stroke": "#fff",
     "strokeWidth": 2
   },
-
-  
   "encoding": {
     "theta": {
       "field": "loss_area_ha",
