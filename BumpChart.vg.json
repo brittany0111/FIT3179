@@ -26,6 +26,13 @@
                 "point": true,
                 "strokeWidth": 3
             },
+            "params": [
+                {
+                "name": "state_select",
+                "select": {"type": "point", "fields": ["state"]},
+                "bind": "legend"
+                }
+            ],
             "encoding": {
                 "x": {
                     "field": "date",
@@ -43,6 +50,10 @@
                     "type": "nominal",
                     "title": "State",
                     "scale": {"scheme": "category20c"}
+                },
+                "opacity": {
+                "condition": {"param": "state_select", "value": 1},
+                "value": 0.2
                 },
                 "tooltip": [
                     {"field": "state", "title": "State"},

@@ -46,56 +46,112 @@
     },
     {
       "data": {
-        "values": [{"State": "Sabah", "longitude": 116.07, "latitude": 5.4}]
+        "url": "https://raw.githubusercontent.com/brittany0111/FIT3179/main/tree_cover_gain.csv"
       },
+      "transform": [
+        {"filter": "datum.State == 'Sarawak'"}
+      ],
       "mark": {
-        "type": "text",
-        "fontSize": 14,
-        "fontWeight": "bold",
-        "fill": "#333",
-        "dx": 50,
-        "dy": -8
+        "type": "circle",
+        "stroke": "#03308a",
+        "strokeWidth": 3,
+        "fill": "none",
+        "opacity": 1
       },
       "encoding": {
-        "longitude": {"field": "longitude", "type": "quantitative"},
-        "latitude": {"field": "latitude", "type": "quantitative"},
-        "text": {"field": "State"}
+        "longitude": {"field": "Long", "type": "quantitative"},
+        "latitude": {"field": "Lat", "type": "quantitative"},
+        "size": {
+          "field": "tree_cover_gain",
+          "type": "quantitative",
+          "scale": {"type": "sqrt", "range": [5, 2000]}
+        }
       }
     },
     {
-    "data": {
-        "values": [{"State": "Sarawak", "longitude": 113.5, "latitude": 2.5}]
+      "data": {
+        "values": [
+          {
+            "x1": 111.6, "y1": 3.7,  
+            "x2": 113, "y2": 2.7 
+          }
+        ]
       },
       "mark": {
-        "type": "text",
-        "fontSize": 14,
-        "fontWeight": "bold",
-        "fill": "#333",
-        "dx": 15,
-        "dy": -8
+        "type": "rule",
+        "stroke": "#04148d",
+        "strokeWidth": 2
       },
       "encoding": {
-        "longitude": {"field": "longitude", "type": "quantitative"},
-        "latitude": {"field": "latitude", "type": "quantitative"},
-        "text": {"field": "State"}
+        "longitude": {"field": "x1", "type": "quantitative"},
+        "latitude": {"field": "y1", "type": "quantitative"},
+        "longitude2": {"field": "x2"},
+        "latitude2": {"field": "y2"}
       }
     },
     {
-    "data": {
-        "values": [{"State": "Pahang", "longitude": 102.4, "latitude": 3.8}]
+      "data": {
+        "values": [{"text": "Sarawak","longitude": 110, "latitude": 6.3}]
       },
       "mark": {
         "type": "text",
-        "fontSize": 14,
+        "font": "Helvetica Neue",
         "fontWeight": "bold",
-        "fill": "#333",
-        "dx": 28,
-        "dy": -8
+        "align": "center",
+        "fontSize": 20,
+        "fill": "#04148d",
+        "radius": 4,
+        "dx": 13,
+        "dy": 42
       },
       "encoding": {
         "longitude": {"field": "longitude", "type": "quantitative"},
         "latitude": {"field": "latitude", "type": "quantitative"},
-        "text": {"field": "State"}
+        "text": {"field": "text"}
+      }
+    },
+    {
+      "data": {
+        "values": [{"text": "302 kha","longitude": 110, "latitude": 6.3}]
+      },
+      "mark": {
+        "type": "text",
+        "font": "Helvetica Neue",
+        "fontWeight": "bold",
+        "align": "center",
+        "fontSize": 20,
+        "fill": "#03308a",
+        "radius": 4,
+        "dx": 13,
+        "dy": 106
+      },
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "text": {"field": "text"}
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"line": "recorded the largest", "longitude": 105.65, "latitude": 4.1},
+          {"line": "tree cover gain, totaling", "longitude": 105.65, "latitude": 3.6}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "font": "Helvetica Neue",
+        "align": "center",
+        "fontSize": 18,
+        "fill": "#4e5ac7",
+        "radius": 4,
+        "dx": 180,
+        "dy": -20
+      },
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "text": {"field": "line"}
       }
     }
   ]

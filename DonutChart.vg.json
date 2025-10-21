@@ -26,8 +26,9 @@
       }
     },
     {
-        "name": "driver_select",
-        "select": {"type": "point", "fields": ["drivers_type"]}
+      "name": "driver_select",
+      "select": {"type": "point", "fields": ["drivers_type"]},
+      "bind": "legend"
     }
   ],
   "transform": [
@@ -40,6 +41,7 @@
     "stroke": "#fff",
     "strokeWidth": 2
   },
+
   
   "encoding": {
     "theta": {
@@ -48,8 +50,9 @@
       "title": "Loss Area (ha)"
     },
     "opacity": {
-        "condition": {"param": "driver_select", "value": 1},
-        "value": 0.2
+      "condition": 
+        {"param": "driver_select", "value": 1},
+      "value": 0.2
     },
     "color": {
       "field": "drivers_type",
