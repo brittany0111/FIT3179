@@ -282,3 +282,12 @@ h2 {
         font-size: 1.2rem;
     }
 }
+
+.metadata {
+    margin: 20px;
+    font-size: 12px;
+}
+
+.metadata ul{
+    margin-left:20px;
+}
